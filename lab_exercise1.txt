@@ -1,0 +1,229 @@
+1. check the current working directory command , and get list with including hidden file
+as well filesize of each of file and folder.
+
+ashwani.mandloi@RSPL-190:~$ pwd
+/home/ad.rapidops.com/ashwani.mandloi
+ashwani.mandloi@RSPL-190:~$ ls -als
+total 124
+ 4 drwx------ 20 ashwani.mandloi domain users 4096 Jan 10 10:09 .
+ 4 drwxr-xr-x  3 root            domain users 4096 Jan  4 20:06 ..
+12 -rw-------  1 ashwani.mandloi domain users 9627 Jan 10 11:05 .bash_history
+ 4 -rw-------  1 ashwani.mandloi domain users  220 Jan  4 20:06 .bash_logout
+ 4 -rw-------  1 ashwani.mandloi domain users 3771 Jan  4 20:06 .bashrc
+ 4 drwx------ 19 ashwani.mandloi domain users 4096 Jan  8 11:57 .cache
+ 4 drwx------ 18 ashwani.mandloi domain users 4096 Jan  8 11:57 .config
+ 4 drwxr-xr-x  5 ashwani.mandloi domain users 4096 Jan 10 11:04 Desktop
+ 4 drwxr-xr-x  3 ashwani.mandloi domain users 4096 Jan  9 10:22 Documents
+ 4 drwxr-xr-x  2 ashwani.mandloi domain users 4096 Jan 10 10:13 Downloads
+ 4 drwxr-xr-x  3 ashwani.mandloi domain users 4096 Jan  7 18:51 .eclipse
+12 -rw-------  1 ashwani.mandloi domain users 8980 Jan  4 20:06 examples.desktop
+ 4 drwx------  3 ashwani.mandloi domain users 4096 Jan  7 11:04 .gnupg
+ 4 -rw-------  1 ashwani.mandloi domain users 2934 Jan 10 10:09 .ICEauthority
+ 4 drwx------  3 ashwani.mandloi domain users 4096 Jan  4 20:06 .local
+ 4 drwx------  5 ashwani.mandloi domain users 4096 Jan  7 10:40 .mozilla
+ 4 drwxr-xr-x  2 ashwani.mandloi domain users 4096 Jan  4 20:06 Music
+ 4 drwx------  4 ashwani.mandloi domain users 4096 Jan  7 11:11 .nv
+ 4 drwxr-xr-x  2 ashwani.mandloi domain users 4096 Jan  9 15:56 Pictures
+ 4 drwx------  3 ashwani.mandloi domain users 4096 Jan  7 11:44 .pki
+ 4 -rw-------  1 ashwani.mandloi domain users  807 Jan  4 20:06 .profile
+ 4 drwxr-xr-x  2 ashwani.mandloi domain users 4096 Jan  4 20:06 Public
+ 4 drwxr-xr-x  2 ashwani.mandloi domain users 4096 Jan  8 12:53 r1
+ 4 drwx------  2 ashwani.mandloi domain users 4096 Jan  7 11:04 .ssh
+ 4 drwxr-xr-x  2 ashwani.mandloi domain users 4096 Jan  4 20:06 Templates
+ 4 drwxr-xr-x  2 ashwani.mandloi domain users 4096 Jan  4 20:06 Videos
+ 4 -rw-------  1 ashwani.mandloi domain users 2324 Jan  9 15:33 .viminfo
+
+
+2. then create the 2 folder name with intern-2020 & rapidops-2020.
+
+
+ashwani.mandloi@RSPL-190:~/Desktop$ mkdir rapidops-2020 intern-2020
+ashwani.mandloi@RSPL-190:~/Desktop$ ls
+c.cpp  intern-2020  jobs.txt  lab_exercise1.txt  la.txt.gz  nan.cpp  r1  r2  r3  rapidops-2020  shellscript  test.txt  x.txt
+
+3. then create 2 file within intern-2020 folder, filename is dev.txt helloworld.txt.
+
+
+ashwani.mandloi@RSPL-190:~/Desktop$ touch intern-2020/{dev.txt,helloworld.txt}
+ashwani.mandloi@RSPL-190:~/Desktop$ ls
+c.cpp  intern-2020  jobs.txt  lab_exercise1.txt  la.txt.gz  nan.cpp  r1  r2  r3  rapidops-2020  shellscript  test.txt  x.txt
+ashwani.mandloi@RSPL-190:~/Desktop$ ls intern-2020
+dev.txt  helloworld.txt
+
+
+4. open the dev.txt file and write down here about any content, and in helloworld.txt file
+write the “helloworld” with using echo command.
+
+
+ashwani.mandloi@RSPL-190:~/Desktop$ cd intern-2020
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ ls
+dev.txt  helloworld.txt
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ cat > dev.txt
+iam using cat command to write in this file
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ cat dev.txt
+iam using cat command to write in this file
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ echo helloworld > helloworld.txtashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ cat helloworld.txt
+helloworld
+
+
+
+5. Now copy dev.txt and helloworld.txt into rapidops-2020 folder.
+
+
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ ls
+dev.txt  helloworld.txt
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ pwd
+/home/ad.rapidops.com/ashwani.mandloi/Desktop/intern-2020
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ cd ..
+ashwani.mandloi@RSPL-190:~/Desktop$ cp intern-2020/{dev.txt,helloworld.txt} rapidops-2020/
+ashwani.mandloi@RSPL-190:~/Desktop$ ls rapidops-2020
+dev.txt  helloworld.txt
+
+
+6. Now go to the rapidops-2020 folder and rename that 2(dev.txt, helloworld.txt) files.
+
+
+
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ ls
+dev.txt  helloworld.txt
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ mv dev.txt developer.txt ;mv  helloworld.txt helloearth.txt
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ ls
+developer.txt  helloearth.txt
+
+7. In the same directory path give the read only permission to dev.txt for file’s owner and
+give read-write-execute for owner & read-write permission for group to helloworld.txt.
+
+
+
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ cd ..
+ashwani.mandloi@RSPL-190:~/Desktop$ cd intern-2020
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ ls -l
+total 8
+-rw-r--r-- 1 ashwani.mandloi domain users 44 Jan 10 11:21 dev.txt
+-rw-r--r-- 1 ashwani.mandloi domain users 11 Jan 10 11:23 helloworld.txt
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ chmod 400 dev.txt ;chmod 760 helloworld.txt
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ ls -l
+total 8
+-r-------- 1 ashwani.mandloi domain users 44 Jan 10 11:21 dev.txt
+-rwxrw---- 1 ashwani.mandloi domain users 11 Jan 10 11:23 helloworld.txt
+
+
+
+8. Now create archive file within same directory and shift into intern-2020 directory.
+
+
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ ls
+dev.txt  helloworld.txt
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ gzip helloworld.txt
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ ls
+dev.txt  helloworld.txt.gz
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ mv helloworld.txt.gz ../rapidops-2020
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ ls
+dev.txt
+ashwani.mandloi@RSPL-190:~/Desktop/intern-2020$ cd ..
+ashwani.mandloi@RSPL-190:~/Desktop$ ls rapidops-2020
+developer.txt  helloearth.txt  helloworld.txt.gz
+
+
+9. Now copy that archive file within same directory location and remove the older archive
+file.
+
+
+ashwani.mandloi@RSPL-190:~/Desktop$ cd rapidops-2020
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ ls
+developer.txt  helloearth.txt  helloworld.txt.gz
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ cp helloworld.txt.gz hello.txt.gz
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ ls
+developer.txt  helloearth.txt  hello.txt.gz  helloworld.txt.gz
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ rm -r helloworld.txt.gz
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ ls
+developer.txt  helloearth.txt  hello.txt.gz
+ashwani.mandloi@RSPL-190:~/Desktop/rapidops-2020$ 
+
+
+10. Using the command find out the dev.txt file.
+
+
+
+ashwani.mandloi@RSPL-190:~/Desktop$ pwd
+/home/ad.rapidops.com/ashwani.mandloi/Desktop
+ashwani.mandloi@RSPL-190:~/Desktop$ ls
+c.cpp        lab_exercise1.txt  r1  rapidops-2020  x.txt
+intern-2020  la.txt.gz          r2  shellscript
+jobs.txt     nan.cpp            r3  test.txt
+ashwani.mandloi@RSPL-190:~/Desktop$ find -iname dev.txt
+./intern-2020/dev.txt
+
+
+11. Check the cpu, memory usage with using CLI.
+
+ashwani.mandloi@RSPL-190:~/Desktop$ top
+
+
+
+12. Check the disk usage and free disk space with using CLI.
+
+ashwani.mandloi@RSPL-190:~/Desktop$ df -h
+Filesystem                   Size  Used Avail Use% Mounted on
+udev                         7.8G     0  7.8G   0% /dev
+tmpfs                        1.6G  2.2M  1.6G   1% /run
+/dev/mapper/ubuntu--vg-root  456G   15G  418G   4% /
+tmpfs                        7.8G   82M  7.8G   2% /dev/shm
+tmpfs                        5.0M  4.0K  5.0M   1% /run/lock
+tmpfs                        7.8G     0  7.8G   0% /sys/fs/cgroup
+/dev/loop1                   1.0M  1.0M     0 100% /snap/gnome-logs/61
+/dev/loop2                   157M  157M     0 100% /snap/gnome-3-28-1804/110
+/dev/loop3                    15M   15M     0 100% /snap/gnome-characters/296
+/dev/loop4                   4.3M  4.3M     0 100% /snap/gnome-calculator/544
+/dev/loop0                   1.0M  1.0M     0 100% /snap/gnome-logs/81
+/dev/loop6                   3.8M  3.8M     0 100% /snap/gnome-system-monitor/123
+/dev/loop5                    15M   15M     0 100% /snap/gnome-characters/375
+/dev/loop8                    45M   45M     0 100% /snap/gtk-common-themes/1353
+/dev/loop7                    89M   89M     0 100% /snap/core/7270
+/dev/loop10                   90M   90M     0 100% /snap/core/8268
+/dev/loop9                   3.8M  3.8M     0 100% /snap/gnome-system-monitor/100
+/dev/loop11                  4.2M  4.2M     0 100% /snap/gnome-calculator/406
+/dev/nvme0n1p1               704M  186M  468M  29% /boot
+/dev/loop12                   43M   43M     0 100% /snap/gtk-common-themes/1313
+/dev/loop13                   55M   55M     0 100% /snap/core18/1288
+/dev/loop14                  150M  150M     0 100% /snap/gnome-3-28-1804/67
+/dev/loop15                   55M   55M     0 100% /snap/core18/1066
+tmpfs                        1.6G   16K  1.6G   1% /run/user/121
+tmpfs                        1.6G   40K  1.6G   1% /run/user/1124202127
+
+
+
+
+13. Check the all system process and filter out any of one process service.
+
+ashwani.mandloi@RSPL-190:~/Desktop$ ps -c 14
+  PID CLS PRI TTY      STAT   TIME COMMAND
+   14 TS   19 ?        S      0:00 [cpuhp/0]
+
+
+14. Retrieve the content from web server with using CLI.
+
+ashwani.mandloi@RSPL-190:~/Desktop$ wget https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-4.3.2-linux-i386.deb
+--2020-01-10 12:41:15--  https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-4.3.2-linux-i386.deb
+Resolving releases.mattermost.com (releases.mattermost.com)... 13.227.143.108, 13.227.143.91, 13.227.143.35, ...
+Connecting to releases.mattermost.com (releases.mattermost.com)|13.227.143.108|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 74745386 (71M) [application/x-debian-package]
+
+
+15. Check your network interface information with using CLI.
+
+ashwani.mandloi@RSPL-190:~$ ifconfig
+eno2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.2.71  netmask 255.255.252.0  broadcast 192.168.3.255
+        inet6 fe80::785b:f030:d876:2b7d  prefixlen 64  scopeid 0x20<link>
+        ether 00:d8:61:a6:57:87  txqueuelen 1000  (Ethernet)
+        RX packets 527230  bytes 254579781 (254.5 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 57125  bytes 5746009 (5.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 16  memory 0xb4200000-b4220000  
+
+
+
+
