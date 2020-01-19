@@ -1,0 +1,518 @@
+lab work answer
+
+1. Create one repository in git, Clone it in your system, push directory and file structure in git.
+
+
+step 1.Created a git repository on github
+step 2.Created a git local repository "labexercise"
+step 3.cloned the remote repository in local repository using "git clone " command
+
+
+2. Create ‘dev’ branch from master and push some contents(directory with two files) inside this  ‘dev’ branch.
+
+step 1.Created a new branch "dev" and switched to "dev" using "git checkout -b dev" command
+step 2.Created a new folder "learn" inside "dev" branch and added two text file in it "f1.txt , f2.txt"
+step 3.Pushed the dev command on the remote repository usin push command
+
+
+3. Create ‘branch1' branch from ‘dev’ branch, create one file in ‘branch1’, as well create ‘branch2’ branch and  add one file for this branch too.
+
+step 1.Ran "git Branch" command 
+step 2.Checkout to branch "dev"
+step 3.created a branch "branch1" in dev branch using "git branch branch1" command
+step 4.Created a file "branch1file.txt" in branch1
+step 5.Checkout to dev branch
+step 6.created a branch "branch2" in dev branch using "git branch branch2" command
+step 7.Created a file "branch2file.txt" in branch2
+
+
+4. Change some contents in existing file inside ‘branch1’ branch, and do same thing for ‘branch2’
+
+
+step 1.Ran "git Branch" command
+step 2.Checkout to branch "branch1"
+step 3.Changed content in file "branch1file.txt" in branch1 
+step 4.Ran "git Branch" command
+step 5.Checkout to branch "branch2"
+step 6.Changed content in file "branch2file.txt" in branch2
+step 7.commited all the changes done
+
+
+5. Commit those changes and after committing change the commit message.
+
+step 1.Ran "git Branch" command
+step 2.Checkout to branch "branch1"
+step 3.amend the commit in "branch1" using "git commit -m --amend "new message"
+step 4.Ran "git Branch" command
+step 5.Checkout to branch "branch2"
+step 3.amend the commit in "branch2" using "git commit -m --amend "new message"
+
+
+6. After changing commit message you have to push your new changes on git. (NOTE: if you get any conflicts then resolve it and then push that in git.)
+
+step 1.Ran "git Branch" command
+step 2.Checkout to branch "branch1"
+step 3.Push branch1 to remote repository using "git push origin branch name" command
+step 4.Ran "git Branch" command
+step 5.Checkout to branch "branch2"
+step 6.Push branch2 to remote repository using "git push origin branch name" command
+
+
+
+
+7. Merge ‘branch1’ and ‘branch2’ in dev branch.
+
+step 1.Ran "git Branch" command
+step 2.Checkout to branch "dev"
+step 3.Merged branch1 and branch2 using "git merge branch1 brnch2 command"
+
+
+8. Follow the steps:
+
+
+(a). Make a few changes in ‘branch1’ contents
+
+step 1.Ran "git Branch" command
+step 2.Checkout to branch "branch1"
+step 3.Added few lines in branch1file.txt
+
+
+
+
+(b). Without ‘adding and committing those changes’ (branch1), make some changes in branch2 contents (stash your branch1 changes and then apply some changes in branch2)
+
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git stash list
+stash@{0}: WIP on branch1: 3d2cb43 changing the commit messeage according to question 5 in branch1 file branch1file.txt
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git checkout branch2
+Switched to branch 'branch2'
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch
+  branch1
+* branch2
+  dev
+  master
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ ls
+branch2file.txt  folder1  instruction.txt  learn
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ cat > branch2file.txt
+iam adding content in branch2 file and commit those changes
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git status
+On branch branch2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   branch2file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git add branch2file.txt 
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git commit -m "this commit is due to question 8"
+[branch2 362de50] this commit is due to question 8
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+
+
+
+(c). Add and commit your branch2 changes and then come back to branch1 and get back your stash changes.
+
+
+
+
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch
+* branch1
+  branch2
+  dev
+  master
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git stash pop
+On branch branch1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   branch1file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (0522f1308d06a8e59fcd76dd726d0e40b3b85529)
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git add branch1file.txt 
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git commit -m "commiting file after removing file from stash"
+[branch1 dffd440] commiting file after removing file from stash
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+9. Follow the steps:
+
+
+    (a). Create two branches from dev, i.e ‘feature1’ & ‘feature2’.
+
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch
+  branch1
+  branch2
+* dev
+  master
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch feature1
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch feature2
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch
+  branch1
+  branch2
+* dev
+  feature1
+  feature2
+  master
+
+
+
+    (b). Add some content in ‘feature1’ as well as add some content in ‘feature2’
+
+
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git add fet.txt
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git commit -m "commiting in fet.txt due to questio 9"
+[feature1 67b946f] commiting in fet.txt due to questio 9
+ 1 file changed, 1 insertion(+)
+ create mode 100644 fet.txt
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git status
+On branch feature1
+nothing to commit, working tree clean
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git log
+commit 67b946f1c02f48432ac9a14987b4ab0ad5e6bd68 (HEAD -> feature1)
+Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+Date:   Sun Jan 19 19:16:20 2020 +0530
+
+    commiting in fet.txt due to questio 9
+
+commit 5321c46f053b2b7b295c5308402fe43f487edd5a (origin/dev, feature2, dev)
+Merge: 3d2cb43 0c392c2
+Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+Date:   Sun Jan 19 13:59:12 2020 +0530
+
+    Merge branches 'branch1' and 'branch2' into dev according to question 7
+
+commit 0c392c219927acca9846efc6abea3cca54dc2dcf (origin/branch2)
+Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+Date:   Sun Jan 19 13:38:46 2020 +0530
+
+    changing the commit messeage according to question 5 in branch2 file branch2file.txt
+
+commit 3d2cb437c38352088e97a20c2ad8246f11f2e980 (origin/branch1)
+Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+Date:   Sun Jan 19 13:36:54 2020 +0530
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git checkout feature2
+Switched to branch 'feature2'
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch
+  branch1
+  branch2
+  dev
+  feature1
+* feature2
+  master
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ cat > fet2.txt
+this are changes done according to question 9
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git status
+On branch feature2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	fet2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git add fet2.txt
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git commit -m "commit in fet2.txt due to question 9"
+[feature2 1d0492f] commit in fet2.txt due to question 9
+ 1 file changed, 1 insertion(+)
+ create mode 100644 fet2.txt
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git status
+On branch feature2
+nothing to commit, working tree clean
+
+
+
+    (c). Push ‘feature1’ on git
+
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch
+  branch1
+  branch2
+  dev
+  feature1
+* feature2
+  master
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git checkout feature1
+Switched to branch 'feature1'
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch
+  branch1
+  branch2
+  dev
+* feature1
+  feature2
+  master
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git push origin feature1
+Username for 'https://github.com': ashwani-mandloi
+Password for 'https://ashwani-mandloi@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'feature1' on GitHub by visiting:
+remote:      https://github.com/ashwani-mandloi/exercise/pull/new/feature1
+remote: 
+To https://github.com/ashwani-mandloi/exercise.git
+ * [new branch]      feature1 -> feature1
+
+
+
+
+    (d). Take pull of ‘feature1’ in ‘feature2’
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git pull origin feature1
+From https://github.com/ashwani-mandloi/exercise
+ * branch            feature1   -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ fet.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 fet.txt
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git status
+On branch feature2
+nothing to commit, working tree clean
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git log
+commit 629158b5833ba8663686ebcdb9c2351bd95d98ab (HEAD -> feature2)
+Merge: 1d0492f 67b946f
+Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+Date:   Sun Jan 19 19:24:33 2020 +0530
+
+    Merge branch 'feature1' of https://github.com/ashwani-mandloi/exercise into feature2
+
+commit 1d0492f0ccd667ff6326d3ce148f9cd1a8013572
+Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+Date:   Sun Jan 19 19:18:05 2020 +0530
+
+    commit in fet2.txt due to question 9
+
+commit 67b946f1c02f48432ac9a14987b4ab0ad5e6bd68 (origin/feature1, feature1)
+Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+Date:   Sun Jan 19 19:16:20 2020 +0530
+
+    commiting in fet.txt due to questio 9
+
+commit 5321c46f053b2b7b295c5308402fe43f487edd5a (origin/dev, dev)
+Merge: 3d2cb43 0c392c2
+Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git log --graph
+*   commit 629158b5833ba8663686ebcdb9c2351bd95d98ab (HEAD -> feature2)
+|\  Merge: 1d0492f 67b946f
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 19:24:33 2020 +0530
+| | 
+| |     Merge branch 'feature1' of https://github.com/ashwani-mandloi/exercise into feature2
+| | 
+| * commit 67b946f1c02f48432ac9a14987b4ab0ad5e6bd68 (origin/feature1, feature1)
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 19:16:20 2020 +0530
+| | 
+| |     commiting in fet.txt due to questio 9
+| | 
+* | commit 1d0492f0ccd667ff6326d3ce148f9cd1a8013572
+|/  Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+|   Date:   Sun Jan 19 19:18:05 2020 +0530
+|   
+|       commit in fet2.txt due to question 9
+|   
+*   commit 5321c46f053b2b7b295c5308402fe43f487edd5a (origin/dev, dev)
+|\  Merge: 3d2cb43 0c392c2
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+:
+
+
+
+    (e). Merge ‘feature1’ into ‘dev’ branch
+
+
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git checkout dev
+Switched to branch 'dev'
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git branch
+  branch1
+  branch2
+* dev
+  feature1
+  feature2
+  master
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git merge feature1
+Updating 5321c46..67b946f
+Fast-forward
+ fet.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 fet.txt
+
+
+
+    (f). Take pull of ‘dev’ branch
+
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git pull origin dev
+From https://github.com/ashwani-mandloi/exercise
+ * branch            dev        -> FETCH_HEAD
+Already up to date.
+
+
+
+    (g). Push your ‘feature2’ on git
+
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git push origin feature2
+Username for 'https://github.com': ashwani-mandloi
+Password for 'https://ashwani-mandloi@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 584 bytes | 584.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'feature2' on GitHub by visiting:
+remote:      https://github.com/ashwani-mandloi/exercise/pull/new/feature2
+remote: 
+To https://github.com/ashwani-mandloi/exercise.git
+ * [new branch]      feature2 -> feature2
+
+
+
+    (h). Rebase ‘feature2’ with ‘dev’ branch and then merge ‘feature2’ in ‘dev’.
+
+
+
+
+
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git rebase dev 
+First, rewinding head to replay your work on top of it...
+Applying: commit in fet2.txt due to question 9
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git checkout dev Switched to branch 'dev'
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git merge feature2
+Updating 67b946f..4797a2f
+Fast-forward
+ fet2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 fet2.txt
+ashwani@ashwani-HP-Notebook-PC:~/Desktop/labexercise/exercise$ git log --graph
+* commit 4797a2f5de08157ee8bb1244ceb8dff93784f2e7 (HEAD -> dev, feature2)
+| Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| Date:   Sun Jan 19 19:18:05 2020 +0530
+| 
+|     commit in fet2.txt due to question 9
+| 
+* commit 67b946f1c02f48432ac9a14987b4ab0ad5e6bd68 (origin/feature1, feature1)
+| Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| Date:   Sun Jan 19 19:16:20 2020 +0530
+| 
+|     commiting in fet.txt due to questio 9
+|   
+*   commit 5321c46f053b2b7b295c5308402fe43f487edd5a (origin/dev)
+|\  Merge: 3d2cb43 0c392c2
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 13:59:12 2020 +0530
+| | 
+| |     Merge branches 'branch1' and 'branch2' into dev according to question 7
+| | 
+| * commit 0c392c219927acca9846efc6abea3cca54dc2dcf (origin/branch2)
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 13:38:46 2020 +0530
+| | 
+| |     changing the commit messeage according to question 5 in branch2 file branch2file.txt
+| | 
+| * commit 20220e2c0fe68b0a0d18ed31fda7794d850d4072
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 13:20:47 2020 +0530
+| | 
+| |      branchfile.txt added in branch1
+| | 
+* | commit 3d2cb437c38352088e97a20c2ad8246f11f2e980 (origin/branch1)
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 13:36:54 2020 +0530
+| | 
+| |     changing the commit messeage according to question 5 in branch1 file branch1file.txt
+| | 
+* | commit d07adf290d59b6e5b7b700ea78b8608010a63e1a
+* commit 4797a2f5de08157ee8bb1244ceb8dff93784f2e7 (HEAD -> dev, feature2)
+| Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| Date:   Sun Jan 19 19:18:05 2020 +0530
+| 
+|     commit in fet2.txt due to question 9
+| 
+* commit 67b946f1c02f48432ac9a14987b4ab0ad5e6bd68 (origin/feature1, feature1)
+| Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| Date:   Sun Jan 19 19:16:20 2020 +0530
+| 
+|     commiting in fet.txt due to questio 9
+|   
+*   commit 5321c46f053b2b7b295c5308402fe43f487edd5a (origin/dev)
+|\  Merge: 3d2cb43 0c392c2
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 13:59:12 2020 +0530
+| | 
+| |     Merge branches 'branch1' and 'branch2' into dev according to question 7
+| | 
+| * commit 0c392c219927acca9846efc6abea3cca54dc2dcf (origin/branch2)
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 13:38:46 2020 +0530
+| | 
+| |     changing the commit messeage according to question 5 in branch2 file branch2file.txt
+| | 
+| * commit 20220e2c0fe68b0a0d18ed31fda7794d850d4072
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 13:20:47 2020 +0530
+| | 
+| |      branchfile.txt added in branch1
+| | 
+* | commit 3d2cb437c38352088e97a20c2ad8246f11f2e980 (origin/branch1)
+| | Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| | Date:   Sun Jan 19 13:36:54 2020 +0530
+| | 
+| |     changing the commit messeage according to question 5 in branch1 file branch1file.txt
+| | 
+* | commit d07adf290d59b6e5b7b700ea78b8608010a63e1a
+|/  Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+|   Date:   Sun Jan 19 13:17:56 2020 +0530
+|   
+|       branchfile.txt added in branch1
+| 
+* commit ee79dd74fcaffd1d1946204960e0ea251ab535a3
+| Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| Date:   Sun Jan 19 12:58:01 2020 +0530
+| 
+|     this is the answer of 2nd question
+| 
+* commit e376a6b583bd3958f57dd7906596dd0856de6bba (origin/master, origin/HEAD, master)
+| Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+| Date:   Fri Jan 17 16:07:41 2020 +0530
+| 
+|     this is my question 2
+| 
+* commit b82f9428792bca02f7a3d7d92bd844d00a8b23ed
+  Author: ashwani mandloi <ashwani.mandloi@rapidops.com>
+  Date:   Fri Jan 17 15:57:40 2020 +0530
+  
+      the first commit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
